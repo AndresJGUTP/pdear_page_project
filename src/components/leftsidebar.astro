@@ -1,0 +1,30 @@
+---
+
+type Props = {
+  currentPage: string
+  items: Array<any>
+}
+
+const { currentPage, items } = Astro.props as Props
+
+function listHtml(children : any, level : number) {
+    return  `<ul class="w-full ${level != 0 && 'border-l list-disc list-inside'}">` + children.map((node: any) => 
+                (node.type == 'folder' ? `<li class="font-bold text-blue mt-5 pl-[${level}em]">` : `<li class="font-light text-black my-1 hover:underline" style="padding-left: ${level}em;">`) + 
+                 (node.type == 'file' ? `<a href="${node.path}" target="_blank"> ${node.name} </a>` : node.name)  +
+                    (node.type === 'file' ? '' : listHtml(node.children, level+1)) +
+                '</li>').join('\n') +
+            '</ul>';
+}
+
+const html_tree = listHtml(items, 0)
+
+---
+
+<div
+  class='w-96'
+>
+<nav aria-labelledby='grid-left' class='md:block max-h-[calc(100vh-4rem)] p-2 px-5 overflow-y-scroll overflow-x-scroll text-sm text-black bg-white shadow-lg'>
+      <h2 class="text-lg text-green pt-5 font-bold"> Documentos </h2>
+      <Fragment set:html={html_tree} />
+  </nav>
+</div>

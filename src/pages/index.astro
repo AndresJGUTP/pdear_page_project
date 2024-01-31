@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content'
+import type { Frontmatter } from '../config'
+import { SiteMetadata } from '../config'
+import Base from '../layouts/base.astro'
+import Intro from '../components/intro.astro'
+import Convenios from '../components/convenios.astro'
+import CajaHerramientas from '../components/cajaherramientas.astro'
+import ContenedoresPedagogicos from '../components/contenedorespedagogicos.astro'
+import LatestArticles from '../components/latestarticles.astro'
+
+
+const frontmatter: Frontmatter = {
+  title: SiteMetadata.title,
+  description: SiteMetadata.description,
+  publishDate: SiteMetadata.buildTime
+}
+
+const posts = await getCollection('blog', ({ data }) => {
+  return data.draft !== true
+})
+const latestPosts = posts.sort((a, b) => +b.data.publishDate - +a.data.publishDate)
+---
+
+<Base frontmatter={frontmatter}>
+  <div id="content" class="md:overflow-y-scroll md:h-[calc(100vh-4rem)] ">
+    <Intro />
+    <Convenios /> 
+    <CajaHerramientas /> 
+    <ContenedoresPedagogicos />
+    <LatestArticles posts={latestPosts} />
+    <!-- <CTA /> -->
+    <!-- <div class='bg-blue-300 p-24 dark:bg-black md:p-12'></div> -->
+  </div>
+  <!-- <script>
+    const content = document.getElementById("content");
+    content!.addEventListener("wheel", (event) => {
+       event.preventDefault();
+       // getting the scrolling speed.
+       if ((event.deltaY === 100) || (event.deltaY === -100)) {
+        event.preventDefault();
+        content!.scrollBy({
+            top: event.deltaY,
+            behavior: "smooth", 
+        });
+    }
+  })
+ </script> -->
+</Base>

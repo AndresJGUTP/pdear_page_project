@@ -1,0 +1,63 @@
+---
+import BackgroundImage from '/src/assets/gallery/images/pexels-min-an-1230157_2.jpg'
+
+const features = [
+  {
+    name: 'Participación Interinstitucional',
+    description:
+      'Fortalecer las acciones interinstitucionales y la participación de los diferentes actores en los procesos de educación ambiental',
+    icon: 'fa-solid:handshake'
+  },
+  {
+    name: 'Formación + Investigación',
+    description:
+      'Fortalecer los procesos de formación e investigación en el sector formal de la educación',
+    icon: 'ph:book-fill'
+  },
+  {
+    name: 'Incentivar la educación ambiental',
+    description:
+      'Fortalecer la estrategia de estímulos e incentivos para la educación ambiental en el sector formal',
+    icon: 'ph:tree-fill'
+  },
+  {
+    name: 'Estrategia Edu-comunicativa',
+    description:
+      'Estructurar la estrategia edu-comunicativa que permita el cumplimiento del eje de información y comunicación del PDAR',
+    icon: 'mdi:speak'
+  }
+]
+---
+
+<div
+  class='bg-blue-100 py-16 sm:h-full sm:snap-center sm:p-0 sm:flex sm:flex-col sm:justify-center sm:items-center'
+>
+  <div class="flex sm:bg-white sm:w-10/12 sm:h-5/6 sm:rounded-xl sm:shadow-lg sm:p-5">
+
+    <div class="w-full h-full flex flex-col justify-around sm:py-5 sm:w-1/2">
+        <img
+        src='src/assets/gallery/png/PRAE_Color.png'
+        alt='PRAE'
+        class='mx-auto h-fit w-5/6 object-contain brightness-50 lg:w-4/6'
+        loading='lazy'
+        />
+      <p class='p-5 text-center md:text-lg'>
+        Son una serie de guías orientadoras, acompañadas de documentos de trabajo, formatos y contenidos de apoyo que permitirán generar capacidades al interior de los establecimientos educativos para el fortalecimiento de los PRAE a nivel departamental
+      </p>
+      
+      <button
+        class='text-xl font-extrabold text-black'
+      >
+        Más Información
+      </button>
+    </div>
+
+    <div class="hidden w-1/2 h-full flex p-5 sm:block">
+      <img 
+        src={BackgroundImage.src}
+        class="w-min h-full object-contain rounded-lg m-auto"
+      />
+    </div>
+
+  </div>
+</div>

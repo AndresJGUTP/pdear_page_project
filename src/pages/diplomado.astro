@@ -1,0 +1,98 @@
+---
+import { Icon } from 'astro-icon'
+import Base from '../layouts/base.astro'
+import PageHero from '../components/pagehero.astro'
+import { SiteMetadata } from '../config'
+import coverSVG from '../assets/gallery/images/pexels-karolina-grabowska-4218706.jpg'
+import socialImage from '../assets/undraw/undraw_contact_us.png'
+
+const frontmatter = {
+  title: 'Diplomado',
+  description: 'Educación ambiental y desarrollo sostenible en el departamento de Risaralda',
+  coverSVG: coverSVG,
+  socialImage: socialImage,
+  publishDate: SiteMetadata.buildTime
+}
+
+const files = [
+  {
+    filename: '001_LA_ERA_DEL_DESARROLLO_SOSTENIBLE.pdf'
+  },
+  {
+    filename: '002_EDUCACIÓN_AMBIENTAL_PARA_EL_DESARROLLO_SOSTENIBLE.pdf'
+  },
+  {
+    filename:
+      '003_DINAMIZACIÓN_DE_LA_EDUCACIÓN_AMBIENTAL_PARA_EL_DESARROLLO_SOSTENIBLE.pdf'
+  }
+]
+---
+
+<Base frontmatter={frontmatter}>
+  <div class='relative m-0 mt-5 p-0 bg-gray-50'>
+    <div class="bg-white lg:w-9/12 mx-auto lg:shadow">
+      <header>
+        <script
+        src='/third_party/pdfThumbnails/pdfThumbnails.js'
+        data-pdfjs-src='/third_party/pdfThumbnails/pdf.js/build/pdf.js'></script>
+        <script defer src="https://unpkg.com/tailwindcss-intersect@1.x.x/dist/observer.min.js"></script>
+        <PageHero
+          title={frontmatter.title}
+          description={frontmatter.description}
+          coverSVG={coverSVG}
+          socialImage={socialImage}
+        />
+      </header>
+      <main>
+        <section class='text-gray-800 lg:m-0'>
+          <div class='block p-1 lg:p-10 lg:mx-auto lg:w-11/12'>
+            <div
+              class='w-full'
+            >
+              <h2 class='m-10 text-2xl font-semibold uppercase tracking-wide text-green-200 lg:m-0'>
+                Video Introductorio
+              </h2>
+              <iframe
+                class='mx-auto my-2 h-96 w-full lg:w-2/3'
+                src='https://www.youtube.com/embed/SB1uGUhaYX0?si=BK78wteostAPrNL6'
+                title='YouTube video player'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                allowfullscreen></iframe>
+            </div>
+
+            <div>
+              <h2 class='mt-10 text-2xl font-semibold uppercase tracking-wide text-green-200'>
+                Documentos
+              </h2>
+
+              <div
+                class='my-5 grid grid-cols-2 gap-8 rounded bg-gray-50 p-5 shadow-[0px_0px_10px_0px_rgba(0,0,0,0.1)] md:grid-cols-3 lg:rounded-lg lg:w-11/12 lg:mx-auto'
+              >
+                {
+                  files.map((fil) => (
+                    <a
+                      class='hover:underline hover:decoration-1 h-full'
+                      href={`/src/storage/documents/diplomado/${fil.filename}`}
+                      target='_blank'
+                    >
+                      <div class='rounded bg-white p-2 shadow-md md:shadow-lg h-full'>
+                        <img
+                          class='mx-auto'
+                          data-pdf-thumbnail-file={`/src/storage/documents/diplomado/${fil.filename}`}
+                          src='/src/assets/gallery/png/pdf.png'
+                        />
+                        <p class='w-full py-5 text-xs break-all lg:p-5'>{fil.filename}</p>
+                      </div>
+                    </a>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</Base>
+
+<!-- src/storage/documents/diplomado/002_ANEXO OVA (UNIDAD 2-DIPLOMADO DE ED AMBIENTAL Y DS EN RISARALDA).pdf -->

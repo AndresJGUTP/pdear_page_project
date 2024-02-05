@@ -32,18 +32,18 @@ export const SiteMetadata = {
   buildTime: new Date()
 }
 
-export { default as Logo } from './assets/gallery/png/logo.png'
-export { default as LogoImage } from './assets/gallery/png/logo.png'
+export { default as Logo } from './assets/png/logo.png'
+export { default as LogoImage } from './assets/png/logo.png'
 export { default as FeaturedSVG } from './assets/svg/undraw/undraw_design_inspiration.svg'
 export { default as DefaultSVG } from './assets/svg/undraw/undraw_my_feed.svg'
 export { default as DefaultImage } from './assets/undraw/undraw_my_feed.png'
-export { default as VideoIntro } from './assets/gallery/videos/video_intro.mp4'
+export { default as VideoIntro } from './assets/videos/video_intro.mp4'
 
 export const NavigationLinks = [
   { name: 'Inicio', href: '' },
   { name: 'Noticias', href: 'blog' },
   { name: 'Caja De Herramientas', href: 'about' },
-  { name: 'Galería Fotográfica', href: 'contact' },
+  { name: 'Galería Fotográfica', href: 'galleria_fotografica' },
   { name: 'Diplomado', href: 'diplomado' }
 ]
 

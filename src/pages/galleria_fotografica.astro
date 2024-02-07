@@ -10,26 +10,24 @@ import socialImage from '../assets/undraw/undraw_contact_us.png'
 import { getCollection } from 'astro:content'
 
 const frontmatter = {
-  title: 'Contact',
-  description: 'Our presence is real and digital. Contact us through the following ways.',
+  title: 'Galeria Fotográfica',
+  description: 'Evidencia fotográfica de las actividades realizadas',
   coverSVG: coverSVG,
   socialImage: socialImage,
   publishDate: SiteMetadata.buildTime
 }
-
-const social = await getCollection('social')
 ---
 
 <Base frontmatter={frontmatter}>
-  <header>
+  <!-- <header>
     <PageHero
       title={frontmatter.title}
       description={frontmatter.description}
       coverSVG={coverSVG}
       socialImage={socialImage}
     />
-  </header>
-  <main>
-    <Gallery />
+  </header> -->
+  <main class="p-5 md:w-10/12 md:mx-auto">
+    <Gallery folder='' />
   </main>
 </Base>

@@ -22,3 +22,5 @@ pnpm-debug.log*
 .astro
 
 src/storage/
+
+src/assets/gallery/

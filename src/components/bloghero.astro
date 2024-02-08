@@ -62,7 +62,7 @@ if (frontmatter.author) {
       <span class='mr-6 flex items-center'>
         <Icon class='mr-1 h-6 w-6 text-green-200' pack='heroicons-outline' name='calendar' />
         <span class='ml-1 font-semibold text-green-200'>
-          {new Date(frontmatter.publishDate).toString()}
+          {new Date(frontmatter.publishDate).toISOString().split('T')[0]}
         </span>
       </span>
       {

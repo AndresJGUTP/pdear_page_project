@@ -8,7 +8,7 @@ import Base from '../../layouts/base.astro'
 import PageHero from '../../components/pagehero.astro'
 import BlogRoll from '../../components/blogroll.astro'
 import PaginateControl from '../../components/paginatecontrol.astro'
-import coverSVG from '../../assets/svg/undraw/undraw_my_feed.svg'
+import coverSVG from '../../assets/images/pexels-karolina-grabowska-4218706.jpg'
 import socialImage from '../../assets/undraw/undraw_my_feed.png'
 
 export interface Props {
@@ -18,10 +18,11 @@ export interface Props {
 const { page } = Astro.props
 
 const frontmatter: Frontmatter = {
-  title:
-    'Blog' +
-    (page.size < page.total ? ' (page ' + page.currentPage + ' of ' + page.lastPage + ')' : ''),
-  description: 'View our articles.',
+  // title:
+  //   'Blog' +
+  //   (page.size < page.total ? ' (Pagina ' + page.currentPage + ' of ' + page.lastPage + ')' : ''),
+  // description: 'Noticias',
+  title: 'Noticias',
   coverSVG: coverSVG,
   socialImage: socialImage,
   publishDate: SiteMetadata.buildTime
@@ -49,7 +50,7 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
       <PaginateControl base={currentPage} page={page} />
     </PageHero>
   </header>
-  <main class='mt-10 bg-gray-100 dark:bg-gray-900'>
+  <main class='mt-10 md:w-2/3 mx-auto'>
     <BlogRoll posts={page.data} />
   </main>
 </Base>

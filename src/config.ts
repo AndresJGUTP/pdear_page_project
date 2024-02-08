@@ -42,7 +42,7 @@ export { default as VideoIntro } from './assets/videos/video_intro.mp4'
 export const NavigationLinks = [
   { name: 'Inicio', href: '' },
   { name: 'Noticias', href: 'blog' },
-  { name: 'Caja De Herramientas', href: 'about' },
+  { name: 'Caja De Herramientas', href: 'caja_herramientas' },
   { name: 'Galería Fotográfica', href: 'galleria_fotografica' },
   { name: 'Diplomado', href: 'diplomado' }
 ]

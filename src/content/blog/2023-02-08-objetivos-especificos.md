@@ -8,6 +8,9 @@ coverSVG: ../../assets/svg/undraw/undraw_building_websites.svg
 socialImage: ../../assets/undraw/undraw_building_websites.png
 categories:
   - general
+tags:
+  - objetivos
+  - pdear
 ---
 
 - Fortalecer las acciones interinstitucionales y la participación de los diferentes actores en los procesos de educación ambiental. <a href="https://www.youtube.com/watch?v=91q2wN7Pqrg" target="_blank">Resultado COMEDAS</a>

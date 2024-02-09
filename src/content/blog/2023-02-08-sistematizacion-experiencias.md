@@ -8,6 +8,10 @@ coverSVG: ../../assets/svg/undraw/undraw_building_websites.svg
 socialImage: ../../assets/undraw/undraw_building_websites.png
 categories:
   - general
+tags:
+  - experiencias
+  - educacion
+  - ambiental
 ---
 
 Con el fin de identificar y destacar aquellos esfuerzos sobresalientes que contribuyen de manera

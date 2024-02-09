@@ -49,7 +49,9 @@ var dirToJSON = function (dir: string, done: Function) {
   }
 
   try {
-    recWalk(dir, results)
+    if (fs.existsSync(dir)) {
+      recWalk(dir, results)
+    }
     done(null, results)
   } catch (err) {
     done(err)

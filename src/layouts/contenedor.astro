@@ -70,7 +70,7 @@ dirToJSON(contenedor_path, function (err: any, results: any) {
   >
     <aside
       title='Site Navigation'
-      class='absolute left-0 top-0 z-30 hidden w-2/3 h-full md:relative md:block md:w-fit bg-red-400'
+      class='absolute left-0 top-0 z-30 hidden w-2/3 h-full md:relative md:block md:w-fit'
       x-bind:class="{'hidden': !isOpen }"
     >
       <LeftSidebar currentPage={currentPage} items={dir_json} />
@@ -105,14 +105,14 @@ dirToJSON(contenedor_path, function (err: any, results: any) {
     >
       <div
         style=`background-image: url(${ImagenArboles.src})`
-        class='absolute bottom-0 left-0 z-0 h-full w-full bg-contain bg-bottom bg-repeat-x'
+        class='absolute bottom-0 left-0 z-0 h-full w-full bg-contain bg-bottom bg-repeat-x md:h-96'
       >
       </div>
 
       <div class='absolute left-0 top-0 h-full w-full'>
         <h1 class='p-5 text-4xl text-blue'>Contenedor Pedagógico #{id}</h1>
         <iframe
-          class='mx-auto mt-5 h-2/5 w-full shadow-xl shadow-gray-600'
+          class='mx-auto mt-5 h-2/5 w-full shadow-xl shadow-gray-600 lg:w-4/5 lg:h-3/5'
           src={URL_VIDEO_CONTENEDORES[id]}
           title='YouTube video player'
           frameborder='0'
@@ -122,11 +122,11 @@ dirToJSON(contenedor_path, function (err: any, results: any) {
         </iframe>
 
         <div
-          class='mx-auto mt-12 flex w-fit justify-center rounded border border-black bg-white/75 p-2 backdrop-brightness-100'
+          class='mx-auto mt-12 flex w-fit justify-center rounded border border-black bg-white/75 p-2 backdrop-brightness-100 md:hidden'
         >
           <Icon class='h-7 w-7 text-[#ff3838]' aria-hidden='true' name='teenyicons:pdf-solid' />
           <button
-            class='my-auto ml-2 align-middle text-lg font-bold hover:cursor-pointer hover:underline'
+            class='my-auto ml-2 align-middle text-lg font-bold'
             x-on:click='isOpen = !isOpen'
           >
             Ver Documentos

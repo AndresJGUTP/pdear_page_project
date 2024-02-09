@@ -21,9 +21,11 @@ const html_tree = listHtml(items, 0)
 ---
 
 <div
-  class='w-96'
+  class='w-full h-full md:w-96'
 >
-<nav aria-labelledby='grid-left' class='md:block max-h-[calc(100vh-4rem)] p-2 px-5 overflow-y-scroll overflow-x-scroll text-sm text-black bg-white shadow-lg'>
+<nav 
+  aria-labelledby='grid-left' 
+  class='md:block h-full px-5 overflow-y-scroll overflow-x-scroll text-sm text-black bg-white shadow-lg'>
       <h2 class="text-lg text-green pt-5 font-bold"> Documentos </h2>
       <Fragment set:html={html_tree} />
   </nav>

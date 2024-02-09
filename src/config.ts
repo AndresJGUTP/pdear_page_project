@@ -32,8 +32,8 @@ export const SiteMetadata = {
   buildTime: new Date()
 }
 
-export { default as Logo } from './assets/png/logo.png'
-export { default as LogoImage } from './assets/png/logo.png'
+export { default as Logo } from './assets/png/logo_pdear.png'
+export { default as LogoImage } from './assets/png/logo_pdear.png'
 export { default as FeaturedSVG } from './assets/svg/undraw/undraw_design_inspiration.svg'
 export { default as DefaultSVG } from './assets/svg/undraw/undraw_my_feed.svg'
 export { default as DefaultImage } from './assets/undraw/undraw_my_feed.png'

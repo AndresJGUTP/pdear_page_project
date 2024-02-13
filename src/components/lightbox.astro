@@ -44,7 +44,6 @@ const images_json = JSON.stringify(images)
 </lightbox-inner>
 <script>
   import PhotoSwipeLightbox from 'photoswipe/lightbox'
-  import PhotoSwipeDynamicCaption from 'photoswipe-dynamic-caption-plugin'
 
   class LightboxInner extends HTMLElement {
     constructor() {
@@ -52,12 +51,10 @@ const images_json = JSON.stringify(images)
 
       const images = JSON.parse(this.dataset.images)
       const id = this.dataset.id
-      console.log(id)
 
       const lightbox = new PhotoSwipeLightbox({
         dataSource: images,
         pswpModule: () => import('photoswipe'),
-
       });
      
       lightbox.init()

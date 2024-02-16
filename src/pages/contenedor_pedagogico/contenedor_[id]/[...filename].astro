@@ -5,9 +5,6 @@ import { SiteMetadata } from '../../../config'
 
 export async function getStaticPaths() {
 
-  // let files_cont1 = await Astro.glob('/src/storage/documents/contenedor_1/**/*.*')
-  // files_cont1 = files_cont1.map(file => encodeURI(file['default'].split('?t=')[0].split('/').slice(-2).join('/')))
-  // console.log(files)
   return [
     { params: { id: '1', filename: undefined }, },
     { params: { id: '2', filename: undefined }, },

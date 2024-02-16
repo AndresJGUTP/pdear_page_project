@@ -10,7 +10,7 @@ const { currentPage, items } = Astro.props as Props
 function listHtml(children : any, level : number) {
     return  `<ul class="w-full ${level != 0 && 'border-l list-disc list-inside'}">` + children.map((node: any) => 
                 (node.type == 'folder' ? `<li class="font-bold text-blue mt-5 pl-[${level}em]">` : `<li class="font-light text-black my-1 hover:underline" style="padding-left: ${level}em;">`) + 
-                 (node.type == 'file' ? `<a href="${node.path}" target="_blank"> ${node.name} </a>` : node.name)  +
+                 (node.src ? `<a href="${node.src}" target="_blank"> ${node.name} </a>` : node.name)  +
                     (node.type === 'file' ? '' : listHtml(node.children, level+1)) +
                 '</li>').join('\n') +
             '</ul>';

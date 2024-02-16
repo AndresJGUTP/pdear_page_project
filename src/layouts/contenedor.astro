@@ -2,10 +2,9 @@
 import type { Frontmatter } from '../config'
 import Base from './base.astro'
 import LeftSidebar from '../components/leftsidebar.astro'
-import fs from 'node:fs'
-import path from 'node:path'
 import { Icon } from 'astro-icon'
 import ImagenArboles from '/src/assets/png/forest_trees_2.png'
+import { contenedor_1, contenedor_2, contenedor_3 } from '../documents_urls'
 
 type Props = {
   frontmatter: Frontmatter
@@ -17,52 +16,18 @@ const currentPage = Astro.url.toString()
 
 const { id } = headings
 
-const contenedor_path = `src/storage/documents/contenedor_${id}/`
-
 const URL_VIDEO_CONTENEDORES = {
   1: 'https://www.youtube.com/embed/m4GhPRwFoLM?si=cNOpdgbkkMEBGQay',
   2: 'https://www.youtube.com/embed/rT0Qkhg5lEQ?si=9Te1tTCUXU4NYZf4',
   3: 'https://www.youtube.com/embed/-C46BWnqavw?si=1e3yfgLWYSm3tWqa'
 }
 
-var dirToJSON = function (dir: string, done: Function) {
-  var results: Array<any> = []
-
-  function recWalk(d: any, res: any) {
-    var list = fs.readdirSync(d)
-    list.forEach((name) => {
-      // var filepath = path.join('/'+dir, name)
-      var tempResults: Array<any> = []
-      var file = path.join(d, name)
-      var stat = fs.statSync(file)
-      if (stat && stat.isDirectory()) {
-        recWalk(file, tempResults)
-        var obj: any = {}
-        obj[name] = tempResults
-        res.push({ name: name, children: tempResults, type: 'folder', path: '\\' + file })
-        // res.push({'name': name, 'children': tempResults, 'type': 'folder', 'path': '/'+encodeURI(file.split('\\').slice(-2).join('/'))});
-      } else {
-        res.push({ name: name, type: 'file', path: '\\' + file })
-        // res.push({'name': name, 'type': 'file', 'path': '/'+encodeURI(file.split('\\').slice(-2).join('/'))});
-      }
-    })
-  }
-
-  try {
-    if (fs.existsSync(dir)) {
-      recWalk(dir, results)
-    }
-    done(null, results)
-  } catch (err) {
-    done(err)
-  }
+const contenido_contenedores = {
+  1: contenedor_1,
+  2: contenedor_2,
+  3: contenedor_3,
 }
 
-let dir_json: Array<any> = []
-dirToJSON(contenedor_path, function (err: any, results: any) {
-  if (err) console.log(err)
-  else dir_json = results
-})
 ---
 
 <Base frontmatter={frontmatter}>
@@ -75,25 +40,9 @@ dirToJSON(contenedor_path, function (err: any, results: any) {
       class='absolute left-0 top-0 z-30 hidden w-2/3 h-full md:relative md:block md:w-fit'
       x-bind:class="{'hidden': !isOpen }"
     >
-      <LeftSidebar currentPage={currentPage} items={dir_json} />
+      <LeftSidebar currentPage={currentPage} items={contenido_contenedores[id]} />
     </aside>
-    <!-- <button 
-      class="md:hidden"
-      x-on:click='isOpen = !isOpen'
-      > 
-        <Icon
-          x-bind:class="{'hidden': isOpen }"
-          class='block h-6 w-6'
-          pack='line-md'
-          name=arrow-open-right
-        />
-        <Icon
-          x-bind:class="{'hidden': !isOpen }"
-          class='block h-6 w-6'
-          pack='line-md'
-          name=arrow-open-left
-        />
-    </button> -->
+
     <button 
       class="w-1/3 h-full absolute right-0 top-0 z-30"
       x-bind:class="{'hidden': !isOpen }"

@@ -20,4 +20,4 @@ Departamental a través de la Universidad Tecnológica de Pereira realizó una c
 conocer las mejores propuestas desarrolladas por las Establecimientos Educativos, las
 Organizaciones no gubernamentales o comunitarias y las Empresas públicas, privadas o mixtas.
 
-<a href="/src/storage/documents/noticias/1.-Sistematización-de-experiencias-en-educación-ambiental.pdf" target="_blank">Más Información</a>
+<a href="https://drive.google.com/file/d/1M0wP1nzfbBnOPziZncQlRbYItjADn1D8/view?usp=drive_link" target="_blank">Más Información</a>

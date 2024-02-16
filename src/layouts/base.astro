@@ -30,15 +30,13 @@ const { frontmatter } = Astro.props
     <meta name="viewport" 
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-    <link rel='icon' href='favicon.png' />
+    <link rel='icon' href='/favicon.png' />
     <!-- <link rel='icon' href={`${Astro.site}favicon.svg`} type='image/svg+xml' /> -->
     <!-- <link rel='apple-touch-icon' href={`${Astro.site}apple-touchicon.png`} /> -->
     <link rel='manifest' href={`${Astro.site}site.webmanifest`} />
     <link rel='sitemap' href={`${Astro.site}sitemap-indexxml`} />
     <!-- <link rel='alternate' type='application/rss+xml' title='RSS' href={`${Astro.site}rss.xml`} /> -->
     <meta name='generator' content={Astro.generator} />
-
-    <script src="/third_party/pdfThumbnails/pdfThumbnails.js" data-pdfjs-src="/third_party/pdfThumbnails/pdf.js/build/pdf.js"></script>
     
     <SEO frontmatter={frontmatter} />
     <ViewTransitions />

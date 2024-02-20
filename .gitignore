@@ -24,3 +24,4 @@ pnpm-debug.log*
 src/storage/
 
 src/assets/gallery/
+.vercel

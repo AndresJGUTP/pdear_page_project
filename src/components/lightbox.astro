@@ -16,33 +16,33 @@ const image = images[0]
 const images_json = JSON.stringify(images)
 ---
 
-<lightbox-inner data-id=`btn-open-${id}` data-images={images_json} class="mx-auto">
+<lightbox-inner data-id=`btn-open-${id}` data-images={images_json} class="block mb-5">
       <figure
         itemscope
         itemtype='http://schema.org/ImageObject'
-        class='relative inline-block w-full h-56 aspect-video bg-green-100 overflow-hidden shadow-sm rounded border-1 lg:my-2'
+        class='relative mx-auto'
       >
         <button
-          class="w-full h-full flex relative"
+          class="w-full h-full flex relative align-center"
           itemprop='contentUrl'
           data-pswp-width={300}
-          data-pswp-height={600}
+          data-pswp-height={300}
           id=`btn-open-${id}`
         >
           <Image
             src={image}
             alt={imagetitles[0]}
             format='webp'
-            class='rounded'
+            class='rounded mx-auto size-[300px] object-cover shadow-lg shadow-black/80'
             width={300}
-            height={399}
+            height={300}
           />
         </button>
-        <figcaption itemprop='caption description' class='rounded text-white text-center font-bold p-2 absolute bottom-0 bg-green-500 w-full left-1/2 transform -translate-x-1/2'>
+        <figcaption itemprop='caption description' class='rounded text-white text-center font-bold p-2 absolute bottom-0 bg-green-400/85 w-full lg:w-5/6 left-1/2 transform -translate-x-1/2'>
          <span>{label}</span>
         </figcaption>
       </figure>    
-    
+
 </lightbox-inner>
 <script>
   import PhotoSwipeLightbox from 'photoswipe/lightbox'

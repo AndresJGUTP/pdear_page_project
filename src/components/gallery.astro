@@ -1,99 +1,10 @@
 ---
 import Lightbox from './lightbox.astro'
+import imageFiles  from '../images_urls.json'
 
 export interface Props {
   folder: string
 }
-
-const { folder } = Astro.props
-
-const getImageSrcs = (imageFiles) => {
-  const folderFiles = Object.keys(imageFiles).filter((image) => image.search(folder) >= 0)
-  const imageSrcs = folderFiles.map((image) => imageFiles[image])
-  
-  return imageSrcs
-}
-
-const imageFiles = [
-  {
-    'label': 'EVENTO DE RECONOCIMIENTO',
-    'data': import.meta.glob<ImageMetadata>('../assets/gallery/EVENTORECONOCIMIENTO/*.{png,webp,jpg,jpeg,JPG}', {
-      import: 'default',
-      eager: true
-    })
-  },
-  {
-    'label': 'BALBOA',
-    'data': import.meta.glob<ImageMetadata>('../assets/gallery/BALBOA/*.{png,webp,jpg,jpeg,JPG}', {
-      import: 'default',
-      eager: true
-    })
-  },
-  {
-    'label': 'DOSQUEBRADAS',
-    'data': import.meta.glob<ImageMetadata>('../assets/gallery/DOSQUEBRADAS/*.{png,webp,jpg,jpeg,JPG}', {
-      import: 'default',
-      eager: true
-    })
-  },
-  {
-    'label': 'FORO DE EDUCACIÓN AMBIENTAL',
-    'data': import.meta.glob<ImageMetadata>('../assets/gallery/FOROEDUCACIONAMBIENTAL/*.{png,webp,jpg,jpeg,JPG}', {
-      import: 'default',
-      eager: true
-    })
-  },
-  {
-    'label': 'GUATICA',
-    'data': import.meta.glob<ImageMetadata>('../assets/gallery/GUATICA/*.{png,webp,jpg,jpeg,JPG}', {
-      import: 'default',
-      eager: true
-    })
-  },
-  {
-    'label': 'LA CELIA',
-    'data': import.meta.glob<ImageMetadata>('../assets/gallery/LACELIA/*.{png,webp,jpg,jpeg,JPG}', {
-      import: 'default',
-      eager: true
-    })
-  },
-  {
-    'label': 'LA VIRGINIA',
-    'data': import.meta.glob<ImageMetadata>('../assets/gallery/LAVIRGINIA/*.{png,webp,jpg,jpeg,JPG}', {
-      import: 'default',
-      eager: true
-    })
-  },
-  {
-    'label': 'PEREIRA',
-    'data': import.meta.glob<ImageMetadata>('../assets/gallery/PEREIRA/*.{png,webp,jpg,jpeg,JPG}', {
-      import: 'default',
-      eager: true
-    })
-  },
-  {
-    'label': 'RESGUARDO INGDIGENA KARABIDRUA',
-    'data': import.meta.glob<ImageMetadata>('../assets/gallery/RESGUARDOINGDIGENAKARABIDRUA/*.{png,webp,jpg,jpeg,JPG}', {
-      import: 'default',
-      eager: true
-    })
-  },
-  {
-    'label': 'SANTA ROSA',
-    'data': import.meta.glob<ImageMetadata>('../assets/gallery/SANTAROSA/*.{png,webp,jpg,jpeg,JPG}', {
-      import: 'default',
-      eager: true
-    })
-  },
-  {
-    'label': 'APIA',
-    'data': import.meta.glob<ImageMetadata>('../assets/gallery/APIA/*.{png,webp,jpg,jpeg,JPG}', {
-      import: 'default',
-      eager: true
-    })
-  },
-  
-]
 
 ---
 <div
@@ -101,11 +12,11 @@ const imageFiles = [
   itemscope
 >
   {
-    imageFiles.map((imageFile, idx) => Object.keys(imageFile['data']).length > 0 && <div class="flex">
+    imageFiles.map((imageFile, idx) => Object.keys(imageFile['images']).length > 0 && <div class="flex">
       <Lightbox 
-      id={String(idx)} 
-      images={getImageSrcs(imageFile['data'])}
-      label={imageFile['label']}
+        id={String(idx)} 
+        images={imageFile['images']}
+        label={imageFile['pathname']}
       />
       </div>
   )

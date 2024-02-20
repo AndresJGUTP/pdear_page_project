@@ -57,6 +57,7 @@
     "@astrojs/check": "^0.3.1",
     "@astrojs/markdoc": "^0.8.0",
     "@astrojs/rss": "^4.0.1",
+    "@vercel/blob": "^0.22.0",
     "astro-icon": "^0.8.2",
     "astro-seo": "^0.8.0",
     "hero-patterns": "^2.1.0",

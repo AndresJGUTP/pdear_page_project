@@ -9,8 +9,8 @@ export interface TagType {
 }
 
 export const SiteMetadata = {
-  title: 'Plan Decenal de Educación Ambiental de Risaralda – PDEAR',
-  description: 'Plan Decenal de Educación Ambiental de Risaralda – PDEAR',
+  title: 'Plan Decenal de Educación Ambiental de Risaralda - PDEAR',
+  description: 'Plan Decenal de Educación Ambiental de Risaralda - PDEAR',
   author: {
     name: 'Andrés Jiménez',
     twitter: '',
@@ -19,7 +19,7 @@ export const SiteMetadata = {
     summary: ''
   },
   org: {
-    name: 'Plan Decenal de Educación Ambiental de Risaralda – PDEAR',
+    name: 'Plan Decenal de Educación Ambiental de Risaralda - PDEAR',
     twitter: '@adfa',
     url: 'https://www.risaralda.gov.co/educacion/publicaciones/155046/plan-decenal-de-educacion-ambiental-de-risaralda-pdear/',
     email: 'correo@correo.com',
@@ -42,7 +42,7 @@ export { default as VideoIntro } from './assets/videos/video_intro.mp4'
 export const NavigationLinks = [
   { name: 'Inicio', href: '' },
   { name: 'Noticias', href: 'blog' },
-  { name: 'Caja De Herramientas', href: 'caja_herramientas' },
+  { name: 'Caja de Herramientas', href: 'caja_herramientas' },
   { name: 'Galería Fotográfica', href: 'galleria_fotografica' },
   { name: 'Diplomado', href: 'diplomado' }
 ]

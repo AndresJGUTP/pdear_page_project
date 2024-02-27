@@ -1,0 +1,43 @@
+---
+import { SiteMetadata } from '../config'
+import type { Frontmatter } from '../config'
+import Base from '../layouts/base.astro'
+import { Icon } from 'astro-icon'
+
+import BackgroundImage from '/src/assets/images/pexels-anton-atanasov-566496.jpg'
+
+const frontmatter: Frontmatter = {
+  title: SiteMetadata.title,
+  description: SiteMetadata.description,
+  publishDate: SiteMetadata.buildTime
+}
+
+---
+
+<Base frontmatter={frontmatter}>
+    <main class=`w-full h-[calc(100vh-4rem)] relative`>
+        <div class=`w-full h-full bg-no-repeat bg-center bg-cover blur-sm` style=`background-image: url(${BackgroundImage.src});`>
+        </div>
+        
+        <div class="p-5 rounded-lg shadow-xl shadow-black/75 border bg-white absolute w-11/12 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-3/5">
+            <h1 class="text-blue font-extrabold text-3xl"> Sistematización de Experiencias en Educación Ambiental </h1>
+            <p class="text-base mt-5 p-5 text-left md:text-lg"> Con el fin de identificar y destacar aquellos esfuerzos sobresalientes que contribuyen de manera significativa a la mejora del entorno y la calidad de vida de la comunidad, la Secretaria de Educación Departamental a través de la Universidad Tecnológica de Pereira realizó una convocatoria para conocer las mejores propuestas desarrolladas por las Establecimientos Educativos, las Organizaciones no gubernamentales o comunitarias y las Empresas públicas, privadas o mixtas. </p>
+            <ul>
+                <li class="ml-10 p-5">
+                    <Icon
+                        class='inline h-7 w-7 text-[#ff3838]'
+                        aria-hidden='true'
+                        name='teenyicons:pdf-solid'
+                      />
+                    <a 
+                        class="my-auto align-middle hover:cursor-pointer hover:underline"
+                        href="https://drive.google.com/file/d/1M0wP1nzfbBnOPziZncQlRbYItjADn1D8/view"
+                        target="_blank"
+                    > 
+                    1.Sistematización-de-experiencias-en-educación-ambiental.pdf
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+</Base>

@@ -45,7 +45,7 @@ export const NavigationLinks = [
   { name: 'Caja de Herramientas', href: 'caja_herramientas' },
   { name: 'Galería Fotográfica', href: 'galleria_fotografica' },
   { name: 'Diplomado', href: 'diplomado' },
-  { name: 'Sistematización de Experiencias', href: 'sistema_experiencias' },
+  { name: 'Sistematización de Experiencias', href: 'sistematizacion_experiencias' },
 ]
 
 export const PAGE_SIZE = 6
